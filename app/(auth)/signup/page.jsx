@@ -5,8 +5,9 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import Footer from "@/app/components/Footer";
 import axios from "axios";
-
+import { useRouter } from "next/navigation";
 const Create = () => {
+  let router  = useRouter();
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -44,10 +45,15 @@ const Create = () => {
         alert(JSON.stringify(values, null, 2));
         axios.post("api/user/signup", values).then((data)=>{
           console.log(data)
+         if (data) {
+          router.push('/login')
+         }else{
+          router.push('/signup');
+         }
+        })
           .catch((err)=>{
             console.log(err);
           })
-        })
       },
     });
     console.log(formik);
