@@ -34,11 +34,9 @@ const Login = () => {
     <>
       <div className="flex justify-center">
         <div className="grid grid-cols-1 pb-20 md:grid-cols-2 gap-8">
-          {/* First Column */}
+
           <div className="p-4">
-            {/* Content of the first column */}
-            {/* Form Inputs */}
-            <form onSubmit={formik.handleSubmit} className='shadow-lg md:p-10 md:-10 mt-32'>
+            <form onSubmit={formik.handleSubmit} className='shadow-lg md:p-10 md:-10 mt-32 p-5'>
               <p className='font-semibold pb-8'>Login to your account</p>
               {/* email Input */}
               <div className="mb-6">
